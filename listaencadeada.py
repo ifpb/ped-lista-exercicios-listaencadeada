@@ -1,6 +1,3 @@
-from curses import setupterm
-
-
 class No:
     def __init__(self, carga, prox=None):
         self.__carga = carga
