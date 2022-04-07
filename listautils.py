@@ -1,6 +1,7 @@
 from listaencadeada import ListaEncadeada
 
-class ListUtils:
+
+class ListaUtils:
 
     @staticmethod
     def clonar(lista):
@@ -10,7 +11,7 @@ class ListUtils:
             clone.inserir_no_final(atual.carga)
             atual = atual.prox
         return clone
-    
+
     @staticmethod
     def inverter(lista):
         invertida = ListaEncadeada()
@@ -25,6 +26,10 @@ class ListUtils:
         atual = lista.cabeca
         retorno = ""
         while atual is not None:
+            # if atual.prox is not None:
+            #     retorno += str(atual.carga) + sep
+            # else:
+            #     retorno += str(atual.carga)
             retorno += str(atual.carga) + (sep if atual.prox is not None else "")
             atual = atual.prox
         return retorno
@@ -50,8 +55,10 @@ class ListUtils:
         while atual is not None or atual2 is not None:
             if atual is not None:
                 lista3.inserir_no_final(atual.carga)
-                atual = atual.prox
+            
             if atual2 is not None:
                 lista3.inserir_no_final(atual2.carga)
-                atual2 = atual2.prox
+
+            atual = atual.prox
+            atual2 = atual2.prox
         return lista3
